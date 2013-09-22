@@ -317,7 +317,7 @@ private void aboutMenuItem(){
 	 new AlertDialog.Builder(this)
 	  .setTitle("About")
 	  .setMessage("This app by Public Lab, will take periodic photographs, and is intended to operate a cheap Android phone while attached to a balloon or kite, for aerial photography. It emails small previews of photos and the latitude and longitude to the given email address, while in flight. " +
-	  		"Once you have your phone back, you can upload the photos to MapKnitter.org to stitch them into maps. Be sure to share your work with the rest of the Public Lab community at PublicLab.org!")
+	  		"Be sure to share your work with the rest of the Public Lab community at PublicLab.org!")
 	  .setNeutralButton("OK", new DialogInterface.OnClickListener(){
 		  
 		  @Override
@@ -594,6 +594,16 @@ public void onClick(View v) {
 		startStopButton.setText("Start Timer");
 		tlapseRunning = false;
 		timeUpdateHandler.removeCallbacks(timeUpdateTask);
+		new AlertDialog.Builder(this)
+			  .setTitle("Make a map")
+			  .setMessage("Now you can upload your photos (stored in the SD card in the Sky Cam folder) to MapKnitter.org to turn your photos into a map.  Be sure to share your work with the rest of the Public Lab community at PublicLab.org!")
+			  .setNeutralButton("OK", new DialogInterface.OnClickListener(){
+				  
+				  @Override
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO Auto-generated method stub
+				}
+			  }).show();
 	//	recd.removeCallbacks(sTask);
 	}
 }
